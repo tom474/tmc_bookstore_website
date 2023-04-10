@@ -5,13 +5,12 @@ Assessment: Assignment 1
 Author: Tran Manh Cuong
 ID: 3974735
 Acknowledgement: Acknowledge the resources that you use here. --> */
-
-/* 6096B4
-93BFCF
-BDCDD6
-EEE9DA */
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,19 +23,19 @@ a {
     text-decoration: none;
 }
 .container {
-    width: 1170px;
-    max-width: calc(100% - 48px);
-    margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
 }
 .btn {
-    --height: 60px;
+    --height: 40px;
     display: inline-block;
-    min-width: 205px;
+    min-width: 100px;
     height: var(--height);
     padding: 0 20px;
     border-radius: 99px;
     border: 1px solid #6096B4;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     text-align: center;
     line-height: var(--height);
@@ -50,63 +49,101 @@ a {
 
 /* ========== Navbar ========== */
 .navbar {
-    height: 80px;
+    position: fixed;
     width: 100%;
-    background: #6096B4;
+    z-index: 999;
+    padding: 30px 0;
+    transition: all 0.3s ease;
+    background-color: #6096B4;
 }
-
-.navbar .logo {
+.navbar.sticky {
+    padding: 15px 0;
+}
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a {
     font-family: 'Dancing Script', cursive;
     font-size: 35px;
     line-height: 80px;
     color: #EEE9DA;
-    padding: 0 100px;
     white-space: nowrap;
-}
-
-.navbar .menu {
-    float: right;
-    margin-right: 20px;
 }
 
 .navbar .menu li {
     display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
 }
 
 .navbar .menu li a {
+    display: block;
     color: #EEE9DA;
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
     padding: 7px 13px;
-    border-radius: 3px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
 }
-
-.navbar a:hover {
+.navbar .menu li a:hover {
     background: #93BFCF;
     transition: 0.5s;
 }
+.navbar.sticky .menu li a:hover {
+    color: #93BFCF;
+}
 
-.navbar .check-btn {
-    font-size: 30px;
+.menu-btn {
     color: #EEE9DA;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
+    font-size: 23px;
     cursor: pointer;
     display: none;
 }
 
-.navbar #check {
-    display: none;
+@media (max-width: 1035px) {
+    .container {
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #6096B4;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
 }
 
 /* ========== Hero ========== */
-.hero {
+.hero .container {
     display: flex;
-    justify-content: space-evenly;
+    padding-top: 200px;
+    justify-content: center;
     align-items: center;
-    margin-top: 76px;
 }
 
 .hero .hero-content {
@@ -136,6 +173,10 @@ a {
 }
 
 .hero .btn {
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    min-width: 205px;
     margin-top: 38px;
 }
 
@@ -143,48 +184,59 @@ a {
     width: 350px;
 }
 
-@media (max-width: 1000px){
-    .navbar .logo{
-      font-size: 30px;
-      padding-left: 50px;
-    }
-    .navbar .menu li a{
-      font-size: 16px;
-    }
+/* ========== Category ========== */
+/* ========== Category ========== */
+.category {
+    padding: 120px 0 20px;
 }
 
-@media (max-width: 960px){
-    .navbar .check-btn {
-        display: block;
-    }
+.category .cate-heading a {
+    display: flex;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #111;
+}
 
-    .navbar .menu {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #6096B4;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-    }
+.category .cate-heading h2 {
+    margin-right: 20px;
+}
 
-    .navbar .menu li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
+.book-list {
+    display: flex;
+    justify-content: space-between;
+}
 
-    .navbar .menu li a {
-        font-size: 20px;
-    }
+.book-item {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 40px);
+    padding-bottom: 20px;
+}
 
-    .navbar .menu li a:hover {
-        background: none;
-        color: #BDCDD6;
-    }
+.book-item:hover {
+    transform: translateY(-16px);
+    box-shadow: 5px 5px #93BFCF;
+}
 
-    #check:checked ~ .menu {
-        left: 0;
-    }
+.book-item .book-title {
+    font-family: 'Roboto Serif', serif;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.book-item .price {
+    color: crimson;
+    margin-top: 5px;
+}
+
+.book-item .rating {
+    color: #6096B4;
+    margin-top: 5px;
+}
+
+
+.book-item .btn {
+    width: 140px;
+    margin-top: 5px;
 }
