@@ -532,6 +532,11 @@ a {
     margin-bottom: 10px;
 }
 
+.contact-page .contact-form .submit {
+    display: flex;
+    flex-direction: row;
+}
+
 .contact-page .contact-form input[type="submit"] {
     background-color: #6096b4;
     color: #eee9da;
@@ -544,8 +549,19 @@ a {
     border-radius: 5px;
 }
 
+.contact-page .contact-form input[value="Reset"] {
+    background-color: #eee9da;
+    color: #6096b4;
+    transform: 0.5s;
+    margin-left: 10px;
+}
+
 .contact-page .contact-form input[type="submit"]:hover {
     opacity: 0.8;
+}
+
+.contact-page .contact-form input[value="Reset"]:hover {
+    background-color: #ddd;
 }
 
 .contact-page .contact-info {
