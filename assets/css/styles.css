@@ -458,7 +458,134 @@ a {
     margin-top: 5px;
 }
 
+/* ========== Contact Page ========== */
+.contact-page .container {
+    padding-top: 200px;
+    margin-bottom: 170px;
+}
+
+.contact-page .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.contact-page .title h2 {
+    color: #111;
+    font-weight: 500;
+}
+
+.contact-page .title p {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.contact-page .contact-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-page h3 {
+    color: #6096b4;
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-page .contact-form {
+    width: 700px;
+}
+
+.contact-page .contact-form .input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.contact-page .contact-form .input-box label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contact-page .contact-form input,
+.contact-page .contact-form select,
+.contact-page .contact-form textarea {
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #6096b4;
+}
+
+.contact-page .contact-form .box {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.contact-page .contact-form textarea {
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.contact-page .contact-form input[type="submit"] {
+    background-color: #6096b4;
+    color: #eee9da;
+    border: none;
+    font-size: 18px;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+    border-radius: 5px;
+}
+
+.contact-page .contact-form input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.contact-page .contact-info {
+    width: 350px;
+}
+
+.contact-page .contact-info .info-box {
+    margin-bottom: 20px;
+}
+
+.contact-page .contact-info .info-box i {
+    color: #6096b4;
+    font-size: 18px;
+}
+
+.contact-page .contact-info .info-box a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    padding: 0 10px;
+}
+
+.contact-page iframe {
+    width: 300px;
+    height: 225px;
+}
+
 /* ========== Responsive ========== */
+@media (max-width: 1300px) {
+    .contact-page .contact-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-page .contact-info {
+        width: 700px;
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 1240px) {
     .category .book-item .book-img {
         width: 200px;
@@ -521,7 +648,7 @@ a {
         margin-left: 0;
         height: 181px;
     }
-    
+
     .detail-page .img-item {
         margin-top: 5px;
     }
@@ -529,7 +656,6 @@ a {
     .detail-page .img-item:first-child {
         margin-top: 5px;
     }
-
 }
 @media (max-width: 960px) {
     .menu-btn {
@@ -582,7 +708,7 @@ a {
     .hero .new-book {
         width: 500px;
     }
-    
+
     .detail-page .product {
         flex-direction: column;
         align-items: center;
@@ -636,6 +762,14 @@ a {
     .category .book-item .book-title {
         width: 200px;
     }
+
+    .contact-page .contact-form {
+        width: 500px;
+    }
+
+    .contact-page .contact-info {
+        width: 500px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -651,7 +785,10 @@ a {
         font-size: 25px;
     }
 
-    .detail-page p, .detail-page .author, .detail-page .rating, .detail-page .quantity {
+    .detail-page p,
+    .detail-page .author,
+    .detail-page .rating,
+    .detail-page .quantity {
         font-size: 14px;
     }
 }
@@ -728,6 +865,36 @@ a {
     .detail-page .product-detail {
         width: 350px;
     }
+
+    .contact-page .contact-form {
+        width: 400px;
+    }
+
+    .contact-page .contact-info {
+        width: 400px;
+    }
+
+    .contact-page .title {
+        font-size: 30px;
+    }
+
+    .contact-page .title p {
+        font-size: 15px;
+    }
+
+    .contact-page h3 {
+        font-size: 18px;
+    }
+
+    .contact-page .contact-form input,
+    .contact-page .contact-form select,
+    .contact-page .contact-form textarea,
+    .contact-page .contact-form .box,
+    .contact-page .contact-form input[type="submit"],
+    .contact-page .contact-info .info-box i,
+    .contact-page .contact-info .info-box a {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -757,6 +924,14 @@ a {
     }
 
     .detail-page .product-detail {
+        width: 300px;
+    }
+
+    .contact-page .contact-form {
+        width: 300px;
+    }
+
+    .contact-page .contact-info {
         width: 300px;
     }
 }
