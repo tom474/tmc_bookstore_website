@@ -4,7 +4,54 @@ Semester: 2023A
 Assessment: Assignment 1
 Author: Tran Manh Cuong
 ID: 3974735
-Acknowledgement: Acknowledge the resources that you use here. -->
+Acknowledgement:
+<script>
+    // Responsive Navbar
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if (this.scrollY > 20) {
+                $(".navbar").addClass("sticky");
+            } else {
+                $(".navbar").removeClass("sticky");
+            }
+        });
+        $(".navbar .menu li a").click(function () {
+            $("html").css("scrollBehavior", "smooth");
+        });
+        $(".menu-btn").click(function () {
+            $(".navbar .menu").toggleClass("active");
+            $(".menu-btn i").toggleClass("active");
+        });
+    });
+
+    // Book image slide
+    const imgs = document.querySelectorAll(".img-select a");
+    const imgBtns = [...imgs];
+    let imgId = 1;
+
+    imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+            event.preventDefault();
+            imgId = imgItem.dataset.id;
+            slideImage();
+        });
+    });
+
+    function slideImage() {
+        const displayWidth = document.querySelector(
+            ".img-showcase img:first-child"
+        ).clientWidth;
+
+        document.querySelector(
+            ".img-showcase"
+        ).style.transform = `translateX(${
+            -(imgId - 1) * displayWidth
+        }px)`;
+    }
+
+    window.addEventListener("resize", slideImage);
+</script>
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -287,7 +334,7 @@ Acknowledgement: Acknowledge the resources that you use here. -->
                             <a href="#!">Copyright</a>
                         </li>
                         <li>
-                            <a href="./contact.html">Contact Us</a>
+                            <a href="./contact.html" target="_blank">Contact Us</a>
                         </li>
                     </ul>
                 </nav>
@@ -316,7 +363,6 @@ Acknowledgement: Acknowledge the resources that you use here. -->
         <script>
             // Responsive Navbar
             $(document).ready(function () {
-                // sticky navbar on scroll script
                 $(window).scroll(function () {
                     if (this.scrollY > 20) {
                         $(".navbar").addClass("sticky");

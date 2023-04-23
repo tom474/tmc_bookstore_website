@@ -4,7 +4,36 @@ Semester: 2023A
 Assessment: Assignment 1
 Author: Tran Manh Cuong
 ID: 3974735
-Acknowledgement: Acknowledge the resources that you use here. -->
+Acknowledgement: 
+<script>
+    $(document).ready(function () {
+        // sticky navbar on scroll script
+        $(window).scroll(function () {
+            if (this.scrollY > 20) {
+                $(".navbar").addClass("sticky");
+            } else {
+                $(".navbar").removeClass("sticky");
+        }
+
+        // scroll-up button show/hide script
+            if (this.scrollY > 500) {
+                $(".scroll-up-btn").addClass("show");
+            } else {
+                $(".scroll-up-btn").removeClass("show");
+            }
+        });
+        // applying again smooth scroll on menu items click
+        $(".navbar .menu li a").click(function () {
+            $("html").css("scrollBehavior", "smooth");
+        });
+
+        // toggle menu/navbar script
+        $(".menu-btn").click(function () {
+            $(".navbar .menu").toggleClass("active");
+            $(".menu-btn i").toggleClass("active");
+        });
+    });
+</script> -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -616,7 +645,7 @@ Acknowledgement: Acknowledge the resources that you use here. -->
                             <a href="#!">Copyright</a>
                         </li>
                         <li>
-                            <a href="./contact.html">Contact Us</a>
+                            <a href="./contact.html" target="_blank">Contact Us</a>
                         </li>
                     </ul>
                 </nav>
@@ -659,6 +688,7 @@ Acknowledgement: Acknowledge the resources that you use here. -->
                         $(".scroll-up-btn").removeClass("show");
                     }
                 });
+
                 // applying again smooth scroll on menu items click
                 $(".navbar .menu li a").click(function () {
                     $("html").css("scrollBehavior", "smooth");
