@@ -1,705 +1,647 @@
-<!-- RMIT University Vietnam
-Course: COSC2430 Web Programming
-Semester: 2023A
-Assessment: Assignment 1
-Author: Tran Manh Cuong
-ID: 3974735
-Acknowledgement: 
-<script>
-    $(document).ready(function () {
-        // sticky navbar on scroll script
-        $(window).scroll(function () {
-            if (this.scrollY > 20) {
-                $(".navbar").addClass("sticky");
-            } else {
-                $(".navbar").removeClass("sticky");
-        }
-
-        // scroll-up button show/hide script
-            if (this.scrollY > 500) {
-                $(".scroll-up-btn").addClass("show");
-            } else {
-                $(".scroll-up-btn").removeClass("show");
-            }
-        });
-        // applying again smooth scroll on menu items click
-        $(".navbar .menu li a").click(function () {
-            $("html").css("scrollBehavior", "smooth");
-        });
-
-        // toggle menu/navbar script
-        $(".menu-btn").click(function () {
-            $(".navbar .menu").toggleClass("active");
-            $(".menu-btn i").toggleClass("active");
-        });
-    });
-</script> -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Computer & Technology Books</title>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computer & Technology Books</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
 
-        <!-- Favicon -->
-        <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="../assets/favicon/apple-icon-57x57.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="../assets/favicon/apple-icon-60x60.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="../assets/favicon/apple-icon-72x72.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="../assets/favicon/apple-icon-76x76.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="../assets/favicon/apple-icon-114x114.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="../assets/favicon/apple-icon-120x120.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="../assets/favicon/apple-icon-144x144.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="../assets/favicon/apple-icon-152x152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../assets/favicon/apple-icon-180x180.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="../assets/favicon/android-icon-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="../assets/favicon/favicon-96x96.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../assets/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../assets/favicon/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta
-            name="msapplication-TileImage"
-            content="../assets.favicon/ms-icon-144x144.png"
-        />
-        <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="../assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets.favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-        <!-- Font Awesome -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="../assets/css/reset.css" />
-        <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <nav class="navbar">
-                <div class="container">
-                    <h1 class="logo">
-                        <a href="../index.html#">TMC Bookstore</a>
-                    </h1>
-                    <ul class="menu">
-                        <li>
-                            <a href="../index.html#" class="menu-btn">Home</a>
-                        </li>
-                        <li>
-                            <a
-                                href="./business.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Business</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#" class="menu-btn">Technology</a>
-                        </li>
-                        <li>
-                            <a
-                                href="./children.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Children</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="./biography.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Biographies</a
-                            >
-                        </li>
-                    </ul>
-                    <div class="menu-btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <h1 class="logo">
+            <a href="../index.html#">TMC Bookstore</a>
+          </h1>
+          <ul class="menu">
+            <li>
+              <a href="../index.html#" class="menu-btn">Home</a>
+            </li>
+            <li>
+              <a href="./business.html" target="_blank" class="menu-btn"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a href="#" class="menu-btn">Technology</a>
+            </li>
+            <li>
+              <a href="./children.html" target="_blank" class="menu-btn"
+                >Children</a
+              >
+            </li>
+            <li>
+              <a href="./biography.html" target="_blank" class="menu-btn"
+                >Biographies</a
+              >
+            </li>
+          </ul>
+          <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container">
-                <section class="hero-content">
-                    <a href="#!"><p class="new-release">BEST SELLER</p></a>
-                    <h1 class="book-title">Python Crash Course</h1>
-                    <p class="book-desc">
-                        Python Crash Course is the world’s best-selling guide to
-                        the Python programming language. This fast-paced,
-                        thorough introduction will have you writing programs,
-                        solving problems, and developing functioning
-                        applications in no time.
-                    </p>
-                    <div class="button">
-                        <a href="./python-crash-course.html" target="_blank" class="btn">Buy Now!</a>
-                    </div>
-                </section>
-                <section class="hero-media">
-                    <figure class="hero-image">
-                        <a href="./python-crash-course.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/pro-1.jpg"
-                                alt="Python Crash Course"
-                                class="new-book"
-                            />
-                        </a>
-                    </figure>
-                </section>
-            </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <section class="hero-content">
+          <a href="#!"><p class="new-release">BEST SELLER</p></a>
+          <h1 class="book-title">Python Crash Course</h1>
+          <p class="book-desc">
+            Python Crash Course is the world’s best-selling guide to the Python
+            programming language. This fast-paced, thorough introduction will
+            have you writing programs, solving problems, and developing
+            functioning applications in no time.
+          </p>
+          <div class="button">
+            <a href="./python-crash-course.html" target="_blank" class="btn"
+              >Buy Now!</a
+            >
+          </div>
         </section>
-
-        <!-- Computer Science -->
-        <section class="category" id="economics">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="#!">
-                        <h2>Computer Science</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./the-chatgpt.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/cs-1.jpg"
-                                alt="The ChatGPT Millionaire"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">The ChatGPT Millionaire</h2>
-                            <p class="price">$12.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./softwar.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/cs-2.jpg"
-                                alt="Softwar"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Softwar</h2>
-                            <p class="price">$35.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./grokking.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/cs-3.jpg"
-                                alt="Grokking Algorithms"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Grokking Algorithms</h2>
-                            <p class="price">$35.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./ai-for-educators.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/cs-4.jpg"
-                                alt="AI for Educators"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">AI for Educators</h2>
-                            <p class="price">$21.25</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
+        <section class="hero-media">
+          <figure class="hero-image">
+            <a href="./python-crash-course.html" target="_blank">
+              <img
+                src="../assets/images/technology/pro-1.jpg"
+                alt="Python Crash Course"
+                class="new-book"
+              />
+            </a>
+          </figure>
         </section>
+      </div>
+    </section>
 
-        <!-- Web Development & Design -->
-        <section class="category" id="web-dev">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="#!">
-                        <h2>Web Development & Design</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./expert-secrets.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/web-1.jpg"
-                                alt="Expert Secrets"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Expert Secrets</h2>
-                            <p class="price">$17.09</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./building-a-storybrand.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/web-2.jpg"
-                                alt="Building a StoryBrand"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Building a StoryBrand</h2>
-                            <p class="price">$14.39</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./fanatical-prospecting.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/web-3.jpg"
-                                alt="Fanatical Prospecting"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Fanatical Prospecting</h2>
-                            <p class="price">$25.49</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./web-development-with-blazor.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/web-4.jpg"
-                                alt="Web Development with Blazor"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                Web Development with Blazor
-                            </h2>
-                            <p class="price">$21.09</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Computer Science -->
+    <section class="category" id="economics">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="#!">
+            <h2>Computer Science</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./the-chatgpt.html" target="_blank">
+              <img
+                src="../assets/images/technology/cs-1.jpg"
+                alt="The ChatGPT Millionaire"
+                class="book-img"
+              />
+              <h2 class="book-title">The ChatGPT Millionaire</h2>
+              <p class="price">$12.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./softwar.html" target="_blank">
+              <img
+                src="../assets/images/technology/cs-2.jpg"
+                alt="Softwar"
+                class="book-img"
+              />
+              <h2 class="book-title">Softwar</h2>
+              <p class="price">$35.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./grokking.html" target="_blank">
+              <img
+                src="../assets/images/technology/cs-3.jpg"
+                alt="Grokking Algorithms"
+                class="book-img"
+              />
+              <h2 class="book-title">Grokking Algorithms</h2>
+              <p class="price">$35.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./ai-for-educators.html" target="_blank">
+              <img
+                src="../assets/images/technology/cs-4.jpg"
+                alt="AI for Educators"
+                class="book-img"
+              />
+              <h2 class="book-title">AI for Educators</h2>
+              <p class="price">$21.25</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Databases & Big Data -->
-        <section class="category" id="data">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="#!">
-                        <h2>Databases & Big Data</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./how-data-happened.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/data-1.jpg"
-                                alt="How Data Happened"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">How Data Happened</h2>
-                            <p class="price">$27.00</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./fundamentals-of-data.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/data-2.jpg"
-                                alt="Fundamentals of Data Engineering"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                Fundamentals of Data Engineering
-                            </h2>
-                            <p class="price">$36.47</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./python-and-sql.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/data-3.jpg"
-                                alt="Python Programming and SQL"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                Python Programming and SQL
-                            </h2>
-                            <p class="price">$38.94</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./sql-guide.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/data-4.jpg"
-                                alt="SQL: The Ultimate Beginner's Guide"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                SQL: The Ultimate Beginner's Guide
-                            </h2>
-                            <p class="price">$23.59</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Web Development & Design -->
+    <section class="category" id="web-dev">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="#!">
+            <h2>Web Development & Design</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./expert-secrets.html" target="_blank">
+              <img
+                src="../assets/images/technology/web-1.jpg"
+                alt="Expert Secrets"
+                class="book-img"
+              />
+              <h2 class="book-title">Expert Secrets</h2>
+              <p class="price">$17.09</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./building-a-storybrand.html" target="_blank">
+              <img
+                src="../assets/images/technology/web-2.jpg"
+                alt="Building a StoryBrand"
+                class="book-img"
+              />
+              <h2 class="book-title">Building a StoryBrand</h2>
+              <p class="price">$14.39</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./fanatical-prospecting.html" target="_blank">
+              <img
+                src="../assets/images/technology/web-3.jpg"
+                alt="Fanatical Prospecting"
+                class="book-img"
+              />
+              <h2 class="book-title">Fanatical Prospecting</h2>
+              <p class="price">$25.49</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./web-development-with-blazor.html" target="_blank">
+              <img
+                src="../assets/images/technology/web-4.jpg"
+                alt="Web Development with Blazor"
+                class="book-img"
+              />
+              <h2 class="book-title">Web Development with Blazor</h2>
+              <p class="price">$21.09</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Programming Languages -->
-        <section class="category" id="programming">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="#!">
-                        <h2>Programming Languages</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./python-crash-course.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/pro-1.jpg"
-                                alt="Python Crash Course"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Python Crash Course</h2>
-                            <p class="price">$38.07</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./automate-python.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/pro-2.jpg"
-                                alt="Automate the Boring Stuff with Python"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                Automate the Boring Stuff with Python
-                            </h2>
-                            <p class="price">$29.61</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./java-guide.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/pro-3.jpg"
-                                alt="Java: The Ultimate Beginner's Guide"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                Java: The Ultimate Beginner's Guide
-                            </h2>
-                            <p class="price">$18.28</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./code-game.html" target="_blank">
-                            <img
-                                src="../assets/images/technology/pro-4.jpg"
-                                alt="Code Gamers Development"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Code Gamers Development</h2>
-                            <p class="price">$12.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Databases & Big Data -->
+    <section class="category" id="data">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="#!">
+            <h2>Databases & Big Data</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./how-data-happened.html" target="_blank">
+              <img
+                src="../assets/images/technology/data-1.jpg"
+                alt="How Data Happened"
+                class="book-img"
+              />
+              <h2 class="book-title">How Data Happened</h2>
+              <p class="price">$27.00</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./fundamentals-of-data.html" target="_blank">
+              <img
+                src="../assets/images/technology/data-2.jpg"
+                alt="Fundamentals of Data Engineering"
+                class="book-img"
+              />
+              <h2 class="book-title">Fundamentals of Data Engineering</h2>
+              <p class="price">$36.47</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./python-and-sql.html" target="_blank">
+              <img
+                src="../assets/images/technology/data-3.jpg"
+                alt="Python Programming and SQL"
+                class="book-img"
+              />
+              <h2 class="book-title">Python Programming and SQL</h2>
+              <p class="price">$38.94</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./sql-guide.html" target="_blank">
+              <img
+                src="../assets/images/technology/data-4.jpg"
+                alt="SQL: The Ultimate Beginner's Guide"
+                class="book-img"
+              />
+              <h2 class="book-title">SQL: The Ultimate Beginner's Guide</h2>
+              <p class="price">$23.59</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Media -->
-        <section class="media">
-            <div class="container">
-                <a href="#!"><h2>You Should Watch These Videos</h2></a>
-                <div class="video-list">
-                    <div class="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/A-jzAyOO6d4"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                    <div class="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/6ibCtsHgz3Y"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Programming Languages -->
+    <section class="category" id="programming">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="#!">
+            <h2>Programming Languages</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./python-crash-course.html" target="_blank">
+              <img
+                src="../assets/images/technology/pro-1.jpg"
+                alt="Python Crash Course"
+                class="book-img"
+              />
+              <h2 class="book-title">Python Crash Course</h2>
+              <p class="price">$38.07</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./automate-python.html" target="_blank">
+              <img
+                src="../assets/images/technology/pro-2.jpg"
+                alt="Automate the Boring Stuff with Python"
+                class="book-img"
+              />
+              <h2 class="book-title">Automate the Boring Stuff with Python</h2>
+              <p class="price">$29.61</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./java-guide.html" target="_blank">
+              <img
+                src="../assets/images/technology/pro-3.jpg"
+                alt="Java: The Ultimate Beginner's Guide"
+                class="book-img"
+              />
+              <h2 class="book-title">Java: The Ultimate Beginner's Guide</h2>
+              <p class="price">$18.28</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./code-game.html" target="_blank">
+              <img
+                src="../assets/images/technology/pro-4.jpg"
+                alt="Code Gamers Development"
+                class="book-img"
+              />
+              <h2 class="book-title">Code Gamers Development</h2>
+              <p class="price">$12.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="logo">
-                    <h1 class="logo"><a href="../index.html#">TMC Bookstore</a></h1>
-                </div>
-                <nav class="footer-navbar">
-                    <ul class="footer-menu">
-                        <li>
-                            <a href="#!">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#!">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#!">Terms</a>
-                        </li>
-                        <li>
-                            <a href="#!">Copyright</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html" target="_blank">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="stay-in-touch">
-                    <a href="#!"><p>Stay In Touch</p></a>
-                    <div class="icon">
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100024044983259"
-                            target="_blank"
-                            ><i class="fab fa-facebook"></i
-                        ></a>
-                        <a
-                            href="https://www.instagram.com/emsignouc0407/"
-                            target="_blank"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a href="mailto:emsignouc0407@gmail.com" target="_blank"
-                            ><i class="fas fa-envelope"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <!-- Media -->
+    <section class="media">
+      <div class="container">
+        <a href="#!"><h2>You Should Watch These Videos</h2></a>
+        <div class="video-list">
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/A-jzAyOO6d4"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/6ibCtsHgz3Y"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- JavaScript for responsive navbar -->
-        <script>
-            $(document).ready(function () {
-                // sticky navbar on scroll script
-                $(window).scroll(function () {
-                    if (this.scrollY > 20) {
-                        $(".navbar").addClass("sticky");
-                    } else {
-                        $(".navbar").removeClass("sticky");
-                    }
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <h1 class="logo"><a href="../index.html#">TMC Bookstore</a></h1>
+        </div>
+        <nav class="footer-navbar">
+          <ul class="footer-menu">
+            <li>
+              <a href="#!">About Us</a>
+            </li>
+            <li>
+              <a href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!">Terms</a>
+            </li>
+            <li>
+              <a href="#!">Copyright</a>
+            </li>
+            <li>
+              <a href="./contact.html" target="_blank">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="stay-in-touch">
+          <a href="#!"><p>Stay In Touch</p></a>
+          <div class="icon">
+            <a
+              href="https://www.facebook.com/profile.php?id=100024044983259"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/emsignouc0407/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="mailto:emsignouc0407@gmail.com" target="_blank"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-                    // scroll-up button show/hide script
-                    if (this.scrollY > 500) {
-                        $(".scroll-up-btn").addClass("show");
-                    } else {
-                        $(".scroll-up-btn").removeClass("show");
-                    }
-                });
+    <!-- JavaScript for responsive navbar -->
+    <script>
+      $(document).ready(function () {
+        // Sticky navbar on scroll script
+        $(window).scroll(function () {
+          if (this.scrollY > 20) {
+            $(".navbar").addClass("sticky");
+          } else {
+            $(".navbar").removeClass("sticky");
+          }
 
-                // applying again smooth scroll on menu items click
-                $(".navbar .menu li a").click(function () {
-                    $("html").css("scrollBehavior", "smooth");
-                });
+          // Scroll-up button show/hide script
+          if (this.scrollY > 500) {
+            $(".scroll-up-btn").addClass("show");
+          } else {
+            $(".scroll-up-btn").removeClass("show");
+          }
+        });
 
-                // toggle menu/navbar script
-                $(".menu-btn").click(function () {
-                    $(".navbar .menu").toggleClass("active");
-                    $(".menu-btn i").toggleClass("active");
-                });
-            });
-        </script>
-    </body>
+        // Applying again smooth scroll on menu items click
+        $(".navbar .menu li a").click(function () {
+          $("html").css("scrollBehavior", "smooth");
+        });
+
+        // Toggle menu/navbar script
+        $(".menu-btn").click(function () {
+          $(".navbar .menu").toggleClass("active");
+          $(".menu-btn i").toggleClass("active");
+        });
+      });
+    </script>
+  </body>
 </html>

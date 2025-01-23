@@ -1,436 +1,359 @@
-<!-- RMIT University Vietnam
-Course: COSC2430 Web Programming
-Semester: 2023A
-Assessment: Assignment 1
-Author: Tran Manh Cuong
-ID: 3974735
-Acknowledgement:
-<script>
-    // Responsive Navbar
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if (this.scrollY > 20) {
-                $(".navbar").addClass("sticky");
-            } else {
-                $(".navbar").removeClass("sticky");
-            }
-        });
-        $(".navbar .menu li a").click(function () {
-            $("html").css("scrollBehavior", "smooth");
-        });
-        $(".menu-btn").click(function () {
-            $(".navbar .menu").toggleClass("active");
-            $(".menu-btn i").toggleClass("active");
-        });
-    });
-
-    // Book image slide
-    const imgs = document.querySelectorAll(".img-select a");
-    const imgBtns = [...imgs];
-    let imgId = 1;
-
-    imgBtns.forEach((imgItem) => {
-        imgItem.addEventListener("click", (event) => {
-            event.preventDefault();
-            imgId = imgItem.dataset.id;
-            slideImage();
-        });
-    });
-
-    function slideImage() {
-        const displayWidth = document.querySelector(
-            ".img-showcase img:first-child"
-        ).clientWidth;
-
-        document.querySelector(
-            ".img-showcase"
-        ).style.transform = `translateX(${
-            -(imgId - 1) * displayWidth
-        }px)`;
-    }
-
-    window.addEventListener("resize", slideImage);
-</script>
--->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Unreasonable Hospitality: The Remarkable Power of Giving People More
-            Than They Expect
-        </title>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Unreasonable Hospitality: The Remarkable Power of Giving People More Than
+      They Expect
+    </title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
 
-        <!-- Favicon -->
-        <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="../assets/favicon/apple-icon-57x57.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="../assets/favicon/apple-icon-60x60.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="../assets/favicon/apple-icon-72x72.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="../assets/favicon/apple-icon-76x76.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="../assets/favicon/apple-icon-114x114.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="../assets/favicon/apple-icon-120x120.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="../assets/favicon/apple-icon-144x144.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="../assets/favicon/apple-icon-152x152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../assets/favicon/apple-icon-180x180.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="../assets/favicon/android-icon-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="../assets/favicon/favicon-96x96.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../assets/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../assets/favicon/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta
-            name="msapplication-TileImage"
-            content="../assets.favicon/ms-icon-144x144.png"
-        />
-        <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="../assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets.favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-        <!-- Font Awesome -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="../assets/css/reset.css" />
-        <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <nav class="navbar">
-                <div class="container">
-                    <h1 class="logo">
-                        <a href="../index.html#">TMC Bookstore</a>
-                    </h1>
-                    <ul class="menu">
-                        <li>
-                            <a href="../index.html#" class="menu-btn">Home</a>
-                        </li>
-                        <li>
-                            <a
-                                href="./business.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Business</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="./technology.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Technology</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="./children.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Children</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="./biography.html"
-                                target="_blank"
-                                class="menu-btn"
-                                >Biographies</a
-                            >
-                        </li>
-                    </ul>
-                    <div class="menu-btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <h1 class="logo">
+            <a href="../index.html#">TMC Bookstore</a>
+          </h1>
+          <ul class="menu">
+            <li>
+              <a href="../index.html#" class="menu-btn">Home</a>
+            </li>
+            <li>
+              <a href="./business.html" target="_blank" class="menu-btn"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a href="./technology.html" target="_blank" class="menu-btn"
+                >Technology</a
+              >
+            </li>
+            <li>
+              <a href="./children.html" target="_blank" class="menu-btn"
+                >Children</a
+              >
+            </li>
+            <li>
+              <a href="./biography.html" target="_blank" class="menu-btn"
+                >Biographies</a
+              >
+            </li>
+          </ul>
+          <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <!-- Detail Page -->
-        <section class="detail-page">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="../index.html#">Home</a>
-                    <span>></span>
-                    <a href="./business.html#">Business</a>
-                    <span>></span>
-                    <a href="#!">Unreasonable Hospitality</a>
-                </div>
-                <div class="product">
-                    <div class="product-imgs">
-                        <div class="img-display">
-                            <div class="img-showcase">
-                                <img
-                                    src="../assets/images/business/pro-2.jpg"
-                                    alt="Unreasonable Hospitality"
-                                />
-                                <img
-                                    src="../assets/images/business/pro-2-2.jpg"
-                                    alt="Unreasonable Hospitality"
-                                />
-                                <img
-                                    src="../assets/images/business/pro-2-3.jpg"
-                                    alt="Unreasonable Hospitality"
-                                />
-                            </div>
-                        </div>
-                        <div class="img-select">
-                            <div class="img-item">
-                                <a href="#" data-id="1">
-                                    <img
-                                        src="../assets/images/business/pro-2.jpg"
-                                        alt="Unreasonable Hospitality"
-                                    />
-                                </a>
-                            </div>
-                            <div class="img-item">
-                                <a href="#" data-id="2">
-                                    <img
-                                        src="../assets/images/business/pro-2-2.jpg"
-                                        alt="Unreasonable Hospitality"
-                                    />
-                                </a>
-                            </div>
-                            <div class="img-item">
-                                <a href="#" data-id="3">
-                                    <img
-                                        src="../assets/images/business/pro-2-3.jpg"
-                                        alt="Unreasonable Hospitality"
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-detail">
-                        <h2 class="book-title">
-                            Unreasonable Hospitality: The Remarkable Power of
-                            Giving People More Than They Expect
-                        </h2>
-                        <p class="author">by <span>Will Guidara</span></p>
-                        <div class="book-desc">
-                            <p>
-                                Will Guidara was twenty-six when he took the
-                                helm of Eleven Madison Park, a struggling
-                                two-star brasserie that had never quite lived up
-                                to its majestic room. Eleven years later, EMP
-                                was named the best restaurant in the world.
-                            </p>
-                            <p>
-                                How did Guidara pull off this unprecedented
-                                transformation? Radical reinvention, a true
-                                partnership between the kitchen and the dining
-                                room—and memorable, over-the-top, bespoke
-                                hospitality. Guidara’s team surprised a family
-                                who had never seen snow with a magical sledding
-                                trip to Central Park after their dinner; they
-                                filled a private dining room with sand, complete
-                                with mai-tais and beach chairs, to console a
-                                couple with a cancelled vacation. And his
-                                hospitality extended beyond those dining at the
-                                restaurant to his own team, who learned to
-                                deliver praise and criticism with intention; why
-                                the answer to some of the most pernicious
-                                business dilemmas is to give more—not less; and
-                                the magic that can happen when a busser starts
-                                thinking like an owner.
-                            </p>
-                            <p>
-                                Today, every business can choose to be a
-                                hospitality business—and we can all transform
-                                ordinary transactions into extraordinary
-                                experiences. Featuring sparkling stories of his
-                                journey through restaurants, with the industry’s
-                                most famous players like Daniel Boulud and Danny
-                                Meyer, Guidara urges us all to find the magic in
-                                what we do—for ourselves, the people we work
-                                with, and the people we serve.
-                            </p>
-                        </div>
-                        <div class="rating">
-                            <span>Rating: </span>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="price">$20.99</p>
-                        <div class="quantity">
-                            <label for="quantity">Quantity: </label>
-                            <input type="number" id="quantity" />
-                        </div>
-                        <a href="#!"><div class="btn">Add to cart</div></a>
-                    </div>
-                </div>
+    <!-- Detail Page -->
+    <section class="detail-page">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html#">Home</a>
+          <span>></span>
+          <a href="./business.html#">Business</a>
+          <span>></span>
+          <a href="#!">Unreasonable Hospitality</a>
+        </div>
+        <div class="product">
+          <div class="product-imgs">
+            <div class="img-display">
+              <div class="img-showcase">
+                <img
+                  src="../assets/images/business/pro-2.jpg"
+                  alt="Unreasonable Hospitality"
+                />
+                <img
+                  src="../assets/images/business/pro-2-2.jpg"
+                  alt="Unreasonable Hospitality"
+                />
+                <img
+                  src="../assets/images/business/pro-2-3.jpg"
+                  alt="Unreasonable Hospitality"
+                />
+              </div>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="logo">
-                    <h1 class="logo"><a href="../index.html#">TMC Bookstore</a></h1>
-                </div>
-                <nav class="footer-navbar">
-                    <ul class="footer-menu">
-                        <li>
-                            <a href="#!">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#!">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#!">Terms</a>
-                        </li>
-                        <li>
-                            <a href="#!">Copyright</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html" target="_blank">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="stay-in-touch">
-                    <a href="#!"><p>Stay In Touch</p></a>
-                    <div class="icon">
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100024044983259"
-                            target="_blank"
-                            ><i class="fab fa-facebook"></i
-                        ></a>
-                        <a
-                            href="https://www.instagram.com/emsignouc0407/"
-                            target="_blank"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a href="mailto:emsignouc0407@gmail.com" target="_blank"
-                            ><i class="fas fa-envelope"></i
-                        ></a>
-                    </div>
-                </div>
+            <div class="img-select">
+              <div class="img-item">
+                <a href="#" data-id="1">
+                  <img
+                    src="../assets/images/business/pro-2.jpg"
+                    alt="Unreasonable Hospitality"
+                  />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="2">
+                  <img
+                    src="../assets/images/business/pro-2-2.jpg"
+                    alt="Unreasonable Hospitality"
+                  />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="3">
+                  <img
+                    src="../assets/images/business/pro-2-3.jpg"
+                    alt="Unreasonable Hospitality"
+                  />
+                </a>
+              </div>
             </div>
-        </footer>
+          </div>
+          <div class="product-detail">
+            <h2 class="book-title">
+              Unreasonable Hospitality: The Remarkable Power of Giving People
+              More Than They Expect
+            </h2>
+            <p class="author">by <span>Will Guidara</span></p>
+            <div class="book-desc">
+              <p>
+                Will Guidara was twenty-six when he took the helm of Eleven
+                Madison Park, a struggling two-star brasserie that had never
+                quite lived up to its majestic room. Eleven years later, EMP was
+                named the best restaurant in the world.
+              </p>
+              <p>
+                How did Guidara pull off this unprecedented transformation?
+                Radical reinvention, a true partnership between the kitchen and
+                the dining room—and memorable, over-the-top, bespoke
+                hospitality. Guidara’s team surprised a family who had never
+                seen snow with a magical sledding trip to Central Park after
+                their dinner; they filled a private dining room with sand,
+                complete with mai-tais and beach chairs, to console a couple
+                with a cancelled vacation. And his hospitality extended beyond
+                those dining at the restaurant to his own team, who learned to
+                deliver praise and criticism with intention; why the answer to
+                some of the most pernicious business dilemmas is to give
+                more—not less; and the magic that can happen when a busser
+                starts thinking like an owner.
+              </p>
+              <p>
+                Today, every business can choose to be a hospitality
+                business—and we can all transform ordinary transactions into
+                extraordinary experiences. Featuring sparkling stories of his
+                journey through restaurants, with the industry’s most famous
+                players like Daniel Boulud and Danny Meyer, Guidara urges us all
+                to find the magic in what we do—for ourselves, the people we
+                work with, and the people we serve.
+              </p>
+            </div>
+            <div class="rating">
+              <span>Rating: </span>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$20.99</p>
+            <div class="quantity">
+              <label for="quantity">Quantity: </label>
+              <input type="number" id="quantity" />
+            </div>
+            <a href="#!"><div class="btn">Add to cart</div></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- JavaScript -->
-        <script>
-            // Responsive Navbar
-            $(document).ready(function () {
-                $(window).scroll(function () {
-                    if (this.scrollY > 20) {
-                        $(".navbar").addClass("sticky");
-                    } else {
-                        $(".navbar").removeClass("sticky");
-                    }
-                });
-                $(".navbar .menu li a").click(function () {
-                    $("html").css("scrollBehavior", "smooth");
-                });
-                $(".menu-btn").click(function () {
-                    $(".navbar .menu").toggleClass("active");
-                    $(".menu-btn i").toggleClass("active");
-                });
-            });
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <h1 class="logo"><a href="../index.html#">TMC Bookstore</a></h1>
+        </div>
+        <nav class="footer-navbar">
+          <ul class="footer-menu">
+            <li>
+              <a href="#!">About Us</a>
+            </li>
+            <li>
+              <a href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!">Terms</a>
+            </li>
+            <li>
+              <a href="#!">Copyright</a>
+            </li>
+            <li>
+              <a href="./contact.html" target="_blank">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="stay-in-touch">
+          <a href="#!"><p>Stay In Touch</p></a>
+          <div class="icon">
+            <a
+              href="https://www.facebook.com/profile.php?id=100024044983259"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/emsignouc0407/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="mailto:emsignouc0407@gmail.com" target="_blank"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-            // Book image slide
-            const imgs = document.querySelectorAll(".img-select a");
-            const imgBtns = [...imgs];
-            let imgId = 1;
+    <!-- JavaScript -->
+    <script>
+      // Responsive Navbar
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if (this.scrollY > 20) {
+            $(".navbar").addClass("sticky");
+          } else {
+            $(".navbar").removeClass("sticky");
+          }
+        });
+        $(".navbar .menu li a").click(function () {
+          $("html").css("scrollBehavior", "smooth");
+        });
+        $(".menu-btn").click(function () {
+          $(".navbar .menu").toggleClass("active");
+          $(".menu-btn i").toggleClass("active");
+        });
+      });
 
-            imgBtns.forEach((imgItem) => {
-                imgItem.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    imgId = imgItem.dataset.id;
-                    slideImage();
-                });
-            });
+      // Book image slide
+      const imgs = document.querySelectorAll(".img-select a");
+      const imgBtns = [...imgs];
+      let imgId = 1;
 
-            function slideImage() {
-                const displayWidth = document.querySelector(
-                    ".img-showcase img:first-child"
-                ).clientWidth;
+      imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+          event.preventDefault();
+          imgId = imgItem.dataset.id;
+          slideImage();
+        });
+      });
 
-                document.querySelector(
-                    ".img-showcase"
-                ).style.transform = `translateX(${
-                    -(imgId - 1) * displayWidth
-                }px)`;
-            }
+      function slideImage() {
+        const displayWidth = document.querySelector(
+          ".img-showcase img:first-child"
+        ).clientWidth;
 
-            window.addEventListener("resize", slideImage);
-        </script>
-    </body>
+        document.querySelector(".img-showcase").style.transform = `translateX(${
+          -(imgId - 1) * displayWidth
+        }px)`;
+      }
+
+      window.addEventListener("resize", slideImage);
+    </script>
+  </body>
 </html>

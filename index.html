@@ -1,686 +1,644 @@
-<!-- RMIT University Vietnam
-Course: COSC2430 Web Programming
-Semester: 2023A
-Assessment: Assignment 1
-Author: Tran Manh Cuong
-ID: 3974735
-Acknowledgement: 
-<script>
-    $(document).ready(function () {
-        // sticky navbar on scroll script
-        $(window).scroll(function () {
-            if (this.scrollY > 20) {
-                $(".navbar").addClass("sticky");
-            } else {
-                $(".navbar").removeClass("sticky");
-        }
-
-        // scroll-up button show/hide script
-            if (this.scrollY > 500) {
-                $(".scroll-up-btn").addClass("show");
-            } else {
-                $(".scroll-up-btn").removeClass("show");
-            }
-        });
-        // applying again smooth scroll on menu items click
-        $(".navbar .menu li a").click(function () {
-            $("html").css("scrollBehavior", "smooth");
-        });
-
-        // toggle menu/navbar script
-        $(".menu-btn").click(function () {
-            $(".navbar .menu").toggleClass("active");
-            $(".menu-btn i").toggleClass("active");
-        });
-    });
-</script> -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TMC Bookstore</title>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMC Bookstore</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
 
-        <!-- Favicon -->
-        <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="./assets/favicon/apple-icon-57x57.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="./assets/favicon/apple-icon-60x60.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="./assets/favicon/apple-icon-72x72.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="./assets/favicon/apple-icon-76x76.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="./assets/favicon/apple-icon-114x114.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="./assets/favicon/apple-icon-120x120.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="./assets/favicon/apple-icon-144x144.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="./assets/favicon/apple-icon-152x152.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="./assets/favicon/apple-icon-180x180.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="./assets/favicon/android-icon-192x192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./assets/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="./assets/favicon/favicon-96x96.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="./assets/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="./assets/favicon/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta
-            name="msapplication-TileImage"
-            content="./assets.favicon/ms-icon-144x144.png"
-        />
-        <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./assets.favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-        <!-- Font Awesome -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <nav class="navbar">
-                <div class="container">
-                    <h1 class="logo"><a href="#">TMC Bookstore</a></h1>
-                    <ul class="menu">
-                        <li>
-                            <a href="#" class="menu-btn">Home</a>
-                        </li>
-                        <li>
-                            <a href="#business" class="menu-btn">Business</a>
-                        </li>
-                        <li>
-                            <a href="#technology" class="menu-btn"
-                                >Technology</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#children" class="menu-btn">Children</a>
-                        </li>
-                        <li>
-                            <a href="#biographies" class="menu-btn"
-                                >Biographies</a
-                            >
-                        </li>
-                    </ul>
-                    <div class="menu-btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <h1 class="logo"><a href="#">TMC Bookstore</a></h1>
+          <ul class="menu">
+            <li>
+              <a href="#" class="menu-btn">Home</a>
+            </li>
+            <li>
+              <a href="#business" class="menu-btn">Business</a>
+            </li>
+            <li>
+              <a href="#technology" class="menu-btn">Technology</a>
+            </li>
+            <li>
+              <a href="#children" class="menu-btn">Children</a>
+            </li>
+            <li>
+              <a href="#biographies" class="menu-btn">Biographies</a>
+            </li>
+          </ul>
+          <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container">
-                <section class="hero-content">
-                    <a href="#!"><p class="new-release">NEW RELEASE</p></a>
-                    <h1 class="book-title">
-                        The Wisdom of the Bullfrog: Leadership Made Simple (But
-                        Not Easy)
-                    </h1>
-                    <p class="book-desc">
-                        From the acclaimed, #1 New York Times bestselling author
-                        of Make Your Bed—a short, inspirational book of advice
-                        and leadership lessons that Admiral McRaven collected
-                        over his four decades as a Navy SEAL.
-                    </p>
-                    <div class="button">
-                        <a href="./pages/the-wisdom-of-the-bullfrog.html" target="_blank" class="btn">Buy Now!</a>
-                    </div>
-                </section>
-                <section class="hero-media">
-                    <figure class="hero-image">
-                        <a href="./pages/the-wisdom-of-the-bullfrog.html" target="_blank">
-                            <img
-                                src="./assets/images/business/man-1.jpg"
-                                alt="The Wisdom of the Bullfrog: Leadership Made Simple (But Not Easy)"
-                                class="new-book"
-                            />
-                        </a>
-                    </figure>
-                </section>
-            </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <section class="hero-content">
+          <a href="#!"><p class="new-release">NEW RELEASE</p></a>
+          <h1 class="book-title">
+            The Wisdom of the Bullfrog: Leadership Made Simple (But Not Easy)
+          </h1>
+          <p class="book-desc">
+            From the acclaimed, #1 New York Times bestselling author of Make
+            Your Bed—a short, inspirational book of advice and leadership
+            lessons that Admiral McRaven collected over his four decades as a
+            Navy SEAL.
+          </p>
+          <div class="button">
+            <a
+              href="./pages/the-wisdom-of-the-bullfrog.html"
+              target="_blank"
+              class="btn"
+              >Buy Now!</a
+            >
+          </div>
         </section>
-
-        <!-- Business -->
-        <section class="category" id="business">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="./pages/business.html" target="_blank">
-                        <h2>Business & Money</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./pages/the-psychology-of-money.html" target="_blank">
-                            <img
-                                src="./assets/images/business/eco-1.jpg"
-                                alt="The Psychology of Money"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">The Psychology of Money</h2>
-                            <p class="price">$14.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/rich-dad-poor-dad.html" target="_blank">
-                            <img
-                                src="./assets/images/business/fin-1.jpg"
-                                alt="Rich Dad Poor Dad"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Rich Dad Poor Dad</h2>
-                            <p class="price">$7.69</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/the-wisdom-of-the-bullfrog.html" target="_blank">
-                            <img
-                                src="./assets/images/business/man-1.jpg"
-                                alt="The Wisdom of the Bullfrog"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                The Wisdom of the Bullfrog
-                            </h2>
-                            <p class="price">$15.98</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/atomic-habits.html" target="_blank">
-                            <img
-                                src="./assets/images/business/pro-1.jpg"
-                                alt="Atomic Habits"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Atomic Habits</h2>
-                            <p class="price">$13.49</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
+        <section class="hero-media">
+          <figure class="hero-image">
+            <a href="./pages/the-wisdom-of-the-bullfrog.html" target="_blank">
+              <img
+                src="./assets/images/business/man-1.jpg"
+                alt="The Wisdom of the Bullfrog: Leadership Made Simple (But Not Easy)"
+                class="new-book"
+              />
+            </a>
+          </figure>
         </section>
+      </div>
+    </section>
 
-        <!-- Computer & Technology -->
-        <section class="category" id="technology">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="./pages/technology.html" target="_blank">
-                        <h2>Computer & Technology</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="./pages/the-chatgpt.html" target="_blank">
-                            <img
-                                src="./assets/images/technology/cs-1.jpg"
-                                alt="The ChatGPT Millionaire"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">The ChatGPT Millionaire</h2>
-                            <p class="price">$12.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/expert-secrets.html" target="_blank">
-                            <img
-                                src="./assets/images/technology/web-1.jpg"
-                                alt="Expert Secrets"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Expert Secrets</h2>
-                            <p class="price">$17.09</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/how-data-happened.html" target="_blank">
-                            <img
-                                src="./assets/images/technology/data-1.jpg"
-                                alt="How Data Happened"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">How Data Happened</h2>
-                            <p class="price">$27.00</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="./pages/python-crash-course.html" target="_blank">
-                            <img
-                                src="./assets/images/technology/pro-1.jpg"
-                                alt="Python Crash Course"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Python Crash Course</h2>
-                            <p class="price">$30.76</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Business -->
+    <section class="category" id="business">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="./pages/business.html" target="_blank">
+            <h2>Business & Money</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./pages/the-psychology-of-money.html" target="_blank">
+              <img
+                src="./assets/images/business/eco-1.jpg"
+                alt="The Psychology of Money"
+                class="book-img"
+              />
+              <h2 class="book-title">The Psychology of Money</h2>
+              <p class="price">$14.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/rich-dad-poor-dad.html" target="_blank">
+              <img
+                src="./assets/images/business/fin-1.jpg"
+                alt="Rich Dad Poor Dad"
+                class="book-img"
+              />
+              <h2 class="book-title">Rich Dad Poor Dad</h2>
+              <p class="price">$7.69</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/the-wisdom-of-the-bullfrog.html" target="_blank">
+              <img
+                src="./assets/images/business/man-1.jpg"
+                alt="The Wisdom of the Bullfrog"
+                class="book-img"
+              />
+              <h2 class="book-title">The Wisdom of the Bullfrog</h2>
+              <p class="price">$15.98</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/atomic-habits.html" target="_blank">
+              <img
+                src="./assets/images/business/pro-1.jpg"
+                alt="Atomic Habits"
+                class="book-img"
+              />
+              <h2 class="book-title">Atomic Habits</h2>
+              <p class="price">$13.49</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Children -->
-        <section class="category" id="children">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="./pages/children.html" target="_blank">
-                        <h2>Children's Books</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/children/edu-1.jpg"
-                                alt="It's Not Easy Being a Bunny"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">
-                                It's Not Easy Being a Bunny
-                            </h2>
-                            <p class="price">$5.98</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/children/humor-2.jpg"
-                                alt="Hilarious Jokes For 12 Year Old Kids"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Hilarious Jokes For 12 Year Old Kids</h2>
-                            <p class="price">$6.95</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/children/sci-1.jpg"
-                                alt="5,000 Awesome Facts"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">5,000 Awesome Facts</h2>
-                            <p class="price">$11.05</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/children/spo-3.jpg"
-                                alt="Big Nate: Game On!"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Big Nate: Game On!</h2>
-                            <p class="price">$8.49</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Computer & Technology -->
+    <section class="category" id="technology">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="./pages/technology.html" target="_blank">
+            <h2>Computer & Technology</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="./pages/the-chatgpt.html" target="_blank">
+              <img
+                src="./assets/images/technology/cs-1.jpg"
+                alt="The ChatGPT Millionaire"
+                class="book-img"
+              />
+              <h2 class="book-title">The ChatGPT Millionaire</h2>
+              <p class="price">$12.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/expert-secrets.html" target="_blank">
+              <img
+                src="./assets/images/technology/web-1.jpg"
+                alt="Expert Secrets"
+                class="book-img"
+              />
+              <h2 class="book-title">Expert Secrets</h2>
+              <p class="price">$17.09</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/how-data-happened.html" target="_blank">
+              <img
+                src="./assets/images/technology/data-1.jpg"
+                alt="How Data Happened"
+                class="book-img"
+              />
+              <h2 class="book-title">How Data Happened</h2>
+              <p class="price">$27.00</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="./pages/python-crash-course.html" target="_blank">
+              <img
+                src="./assets/images/technology/pro-1.jpg"
+                alt="Python Crash Course"
+                class="book-img"
+              />
+              <h2 class="book-title">Python Crash Course</h2>
+              <p class="price">$30.76</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Biographies & Memoirs -->
-        <section class="category" id="biographies">
-            <div class="container">
-                <div class="cate-heading">
-                    <a href="./pages/biography.html" target="_blank">
-                        <h2>Biographies & Memoirs</h2>
-                        <i class="fas fa-long-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="book-list">
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/biographies/mem-1.jpg"
-                                alt="The Pathless Path"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">The Pathless Path</h2>
-                            <p class="price">$17.42</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/biographies/lead-2.jpg"
-                                alt="Extreme Ownership"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">Extreme Ownership</h2>
-                            <p class="price">$17.98</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/biographies/cri-3.jpg"
-                                alt="The Art Of War"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">The Art Of War</h2>
-                            <p class="price">$4.99</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                    <section class="book-item">
-                        <a href="#!">
-                            <img
-                                src="./assets/images/biographies/his-1.jpg"
-                                alt="A Promised Land"
-                                class="book-img"
-                            />
-                            <h2 class="book-title">A Promised Land</h2>
-                            <p class="price">$20.00</p>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </p>
-                            <div class="btn">Add to Cart</div>
-                        </a>
-                    </section>
-                </div>
-            </div>
-        </section>
+    <!-- Children -->
+    <section class="category" id="children">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="./pages/children.html" target="_blank">
+            <h2>Children's Books</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/children/edu-1.jpg"
+                alt="It's Not Easy Being a Bunny"
+                class="book-img"
+              />
+              <h2 class="book-title">It's Not Easy Being a Bunny</h2>
+              <p class="price">$5.98</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/children/humor-2.jpg"
+                alt="Hilarious Jokes For 12 Year Old Kids"
+                class="book-img"
+              />
+              <h2 class="book-title">Hilarious Jokes For 12 Year Old Kids</h2>
+              <p class="price">$6.95</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/children/sci-1.jpg"
+                alt="5,000 Awesome Facts"
+                class="book-img"
+              />
+              <h2 class="book-title">5,000 Awesome Facts</h2>
+              <p class="price">$11.05</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/children/spo-3.jpg"
+                alt="Big Nate: Game On!"
+                class="book-img"
+              />
+              <h2 class="book-title">Big Nate: Game On!</h2>
+              <p class="price">$8.49</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Media -->
-        <section class="media">
-            <div class="container">
-                <a href="#!"><h2>You Should Watch These Videos</h2></a>
-                <div class="video-list">
-                    <div class="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/A-jzAyOO6d4"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                    <div class="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/6ibCtsHgz3Y"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Biographies & Memoirs -->
+    <section class="category" id="biographies">
+      <div class="container">
+        <div class="cate-heading">
+          <a href="./pages/biography.html" target="_blank">
+            <h2>Biographies & Memoirs</h2>
+            <i class="fas fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="book-list">
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/biographies/mem-1.jpg"
+                alt="The Pathless Path"
+                class="book-img"
+              />
+              <h2 class="book-title">The Pathless Path</h2>
+              <p class="price">$17.42</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/biographies/lead-2.jpg"
+                alt="Extreme Ownership"
+                class="book-img"
+              />
+              <h2 class="book-title">Extreme Ownership</h2>
+              <p class="price">$17.98</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/biographies/cri-3.jpg"
+                alt="The Art Of War"
+                class="book-img"
+              />
+              <h2 class="book-title">The Art Of War</h2>
+              <p class="price">$4.99</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+          <section class="book-item">
+            <a href="#!">
+              <img
+                src="./assets/images/biographies/his-1.jpg"
+                alt="A Promised Land"
+                class="book-img"
+              />
+              <h2 class="book-title">A Promised Land</h2>
+              <p class="price">$20.00</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <div class="btn">Add to Cart</div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="logo">
-                    <h1 class="logo"><a href="#">TMC Bookstore</a></h1>
-                </div>
-                <nav class="footer-navbar">
-                    <ul class="footer-menu">
-                        <li>
-                            <a href="#!">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#!">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#!">Terms</a>
-                        </li>
-                        <li>
-                            <a href="#!">Copyright</a>
-                        </li>
-                        <li>
-                            <a href="./pages/contact.html" target="_blank">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="stay-in-touch">
-                    <a href="#!"><p>Stay In Touch</p></a>
-                    <div class="icon">
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100024044983259"
-                            target="_blank"
-                            ><i class="fab fa-facebook"></i
-                        ></a>
-                        <a
-                            href="https://www.instagram.com/emsignouc0407/"
-                            target="_blank"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a href="mailto:emsignouc0407@gmail.com" target="_blank"
-                            ><i class="fas fa-envelope"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <!-- Media -->
+    <section class="media">
+      <div class="container">
+        <a href="#!"><h2>You Should Watch These Videos</h2></a>
+        <div class="video-list">
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/A-jzAyOO6d4"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/6ibCtsHgz3Y"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- JavaScript for responsive navbar -->
-        <script>
-            $(document).ready(function () {
-                // sticky navbar on scroll script
-                $(window).scroll(function () {
-                    if (this.scrollY > 20) {
-                        $(".navbar").addClass("sticky");
-                    } else {
-                        $(".navbar").removeClass("sticky");
-                    }
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <h1 class="logo"><a href="#">TMC Bookstore</a></h1>
+        </div>
+        <nav class="footer-navbar">
+          <ul class="footer-menu">
+            <li>
+              <a href="#!">About Us</a>
+            </li>
+            <li>
+              <a href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!">Terms</a>
+            </li>
+            <li>
+              <a href="#!">Copyright</a>
+            </li>
+            <li>
+              <a href="./pages/contact.html" target="_blank">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="stay-in-touch">
+          <a href="#!"><p>Stay In Touch</p></a>
+          <div class="icon">
+            <a
+              href="https://www.facebook.com/profile.php?id=100024044983259"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/emsignouc0407/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="mailto:emsignouc0407@gmail.com" target="_blank"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-                    // scroll-up button show/hide script
-                    if (this.scrollY > 500) {
-                        $(".scroll-up-btn").addClass("show");
-                    } else {
-                        $(".scroll-up-btn").removeClass("show");
-                    }
-                });
-                
-                // applying again smooth scroll on menu items click
-                $(".navbar .menu li a").click(function () {
-                    $("html").css("scrollBehavior", "smooth");
-                });
+    <!-- JavaScript for responsive navbar -->
+    <script>
+      $(document).ready(function () {
+        // Sticky navbar on scroll script
+        $(window).scroll(function () {
+          if (this.scrollY > 20) {
+            $(".navbar").addClass("sticky");
+          } else {
+            $(".navbar").removeClass("sticky");
+          }
 
-                // toggle menu/navbar script
-                $(".menu-btn").click(function () {
-                    $(".navbar .menu").toggleClass("active");
-                    $(".menu-btn i").toggleClass("active");
-                });
-            });
-        </script>
-    </body>
+          // Scroll-up button show/hide script
+          if (this.scrollY > 500) {
+            $(".scroll-up-btn").addClass("show");
+          } else {
+            $(".scroll-up-btn").removeClass("show");
+          }
+        });
+
+        // Applying again smooth scroll on menu items click
+        $(".navbar .menu li a").click(function () {
+          $("html").css("scrollBehavior", "smooth");
+        });
+
+        // Toggle menu/navbar script
+        $(".menu-btn").click(function () {
+          $(".navbar .menu").toggleClass("active");
+          $(".menu-btn i").toggleClass("active");
+        });
+      });
+    </script>
+  </body>
 </html>
