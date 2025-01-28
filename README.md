@@ -1,14 +1,17 @@
-# TMC Bookstore Website  
+# TMC Bookstore Website
 
-TMC Bookstore is an online platform that allows users to browse and explore books seamlessly. It features a structured layout for easy navigation and book discovery.  
+TMC Bookstore is a user-friendly online platform that enables book lovers to browse, explore, and discover a wide range of books seamlessly. With a structured layout and intuitive navigation, users can easily find their next great read.
 
-## Tech Stack  
-- HTML  
-- CSS  
-- JavaScript  
+## Tech Stack
 
-## Features  
-- **Home Page**: Displays featured books and new arrivals.  
-- **Category Page**: Display books by category.  
-- **Book Detail Page**: Shows book title, author, price, description, and rating.  
-- **Contact Page**: Includes a contact form, store location, and social media links.
+- HTML
+- CSS
+- JavaScript 
+
+## Features
+
+- **Home Page**: Showcases featured books and the latest arrivals.  
+- **Category Page**: Organizes books by genre for easy browsing.  
+- **Book Detail Page**: Displays book title, author, price, description, and ratings.  
+- **Contact Page**: Includes a contact form, store location, and social media links for user inquiries.  
+
